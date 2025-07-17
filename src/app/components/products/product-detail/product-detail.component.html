@@ -1,0 +1,68 @@
+<div class="product-detail-container container my-5" *ngIf="product; else loading">
+
+  <div class="row ">
+    <div class="col-md-7 product-image-section pe-4">
+      <img [src]="product.image" [alt]="product.title">
+    </div>
+
+    <div class="col-md-5 ps-4 product-info-section">
+      <p class="vendor">{{ product.category | titlecase }}</p>
+      <h1 class="title">{{ product.title }}</h1>
+      <p class="price">{{ product.price | currency }}</p>
+
+      <div class="col-12 product-description">
+      <h2>Description</h2>
+      <p>{{ product.description }}</p>
+    </div>
+
+      <div class="form-group">
+        <label for="size-select">SIZE</label>
+        <select id="size-select" class="form-control">
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="style-select">STYLE</label>
+        <select id="style-select" class="form-control">
+          <option>Black Painted Metal + Opal Glass Shade</option>
+          <option>White Painted Metal + Clear Glass Shade</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>QUANTITY</label>
+        <div class="quantity-selector">
+          <button class="btn-quantity" (click)="decrementQuantity()" [disabled]="quantity <= 1">-</button>
+          <input type="number" class="quantity-input" [(ngModel)]="quantity">
+          <button class="btn-quantity" (click)="incrementQuantity()">+</button>
+        </div>
+      </div>
+
+      <button class="btn-add-to-cart">Add to Cart</button>
+      <button class="btn-buy-now">Buy with <span>Shop Pay</span></button>
+
+      <div class="info-rows">
+        <div class="info-row">
+          <span>SHIPPING</span>
+          <span>Free Shipping</span>
+        </div>
+        <div class="info-row">
+          <span>RETURNS</span>
+          <span>Free 30-day Returns</span>
+        </div>
+        <div class="info-row">
+          <span>SHIPS VIA</span>
+          <span>UPS/FedEx/USPS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>

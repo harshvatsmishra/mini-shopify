@@ -1,0 +1,41 @@
+<div class="list-container">
+  <div class="page-title-header text-center">
+    <h1>Woud</h1>
+  </div>
+
+  <div class="filters">
+  <div class="filter-controls d-flex align-items-center gap-4">
+
+    <span class="sort-control" (click)="toggleSort('price')">
+      Price
+      <i *ngIf="priceSortOrder === 'asc'" class="fa-solid fa-arrow-up sort-icon"></i>
+      <i *ngIf="priceSortOrder === 'desc'" class="fa-solid fa-arrow-down sort-icon"></i>
+    </span>
+
+    <span class="sort-control" (click)="toggleSort('rating')">
+      Rating
+      <i *ngIf="ratingSortOrder === 'desc'" class="fa-solid fa-arrow-down sort-icon"></i>
+      <i *ngIf="ratingSortOrder === 'asc'" class="fa-solid fa-arrow-up sort-icon"></i>
+    </span>
+
+    <span class="clear" (click)="clearFilters()">Clear all</span>
+  </div>
+
+  <div class="sort-controls dropdown">
+  <span class="dropdown-toggle-visual">
+        Featured <i class="fa-solid fa-chevron-down"></i>
+    </span>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#" (click)="$event.preventDefault()">Featured</a></li>
+        <li><a class="dropdown-item" href="#" (click)="$event.preventDefault()">Relevance</a></li>
+    </ul>
+    </div>
+</div>
+
+  <div class="product-grid">
+    <app-product-card
+      *ngFor="let product of (products$ | async); trackBy: trackByProductId"
+      [product]="product">
+    </app-product-card>
+  </div>
+</div>

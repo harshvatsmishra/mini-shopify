@@ -1,0 +1,57 @@
+<div class="topnav">
+  <div class="container-fluid">
+    <div class="logo d-none d-md-block ms-4">987654321</div>
+
+    <div class="heading ms-md-4" (click)="navigateToHome()"><h1 class="ms-md-4">HORNE</h1></div>
+
+    <div class="nav-items d-none d-md-flex me-4">
+      <a href="#">Trade</a>
+      <a href="#">Journal</a>
+    </div>
+
+    <div class="hamburger-menu dropdown d-md-none">
+      <button class="btn btn-link" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">Trade</a></li>
+        <li><a class="dropdown-item" href="#">Journal</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-nav">
+  <div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center w-100">
+
+      <div class="menu-items d-none d-md-flex justify-content-center">
+        <a href="#" (click)="selectCategory($event, 'All')" [class.active]="activeCategory === 'All'">All</a>
+        <a *ngFor="let category of (categories$ | async)" href="#" (click)="selectCategory($event, category)" [class.active]="activeCategory === category">
+          {{ category | titlecase }}
+        </a>
+      </div>
+
+      <div class="category-dropdown dropdown d-md-none">
+        <button class="btn btn-more dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ activeCategory | titlecase }}
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="#" (click)="selectCategory($event, 'All')" [class.active]="activeCategory === 'All'">All</a>
+          </li>
+          <li *ngFor="let category of (categories$ | async)">
+            <a class="dropdown-item" href="#" (click)="selectCategory($event, category)" [class.active]="activeCategory === category">
+              {{ category | titlecase }}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="search-container d-flex justify-content-start">
+        <input type="text" placeholder="Search" class="search-input" (input)="onSearch($event)">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      </div>
+    </div>
+  </div>
+</div>
