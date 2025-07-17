@@ -16,4 +16,8 @@ export const routes: Routes = [
         './components/products/product-detail/product-detail.component'
       ).then((m) => m.ProductDetailComponent),
   },
+  {
+    path: '**',
+    redirectTo: 'products',
+  },
 ];
