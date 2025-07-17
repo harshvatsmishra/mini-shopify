@@ -68,23 +68,26 @@ _or, if you have the files locally, navigate into the project directory._
 
 The application follows a standard, feature-based folder structure that promotes scalability and maintainability.
 
-src/  
-└── app/  
- ├── components/  
- │ ├── products/  
- │ │ ├── product-card/ \# Reusable card component  
- │ │ ├── product-detail/ \# Detail page component  
- │ │ └── product-list/ \# List of products component  
- │ └── shared/  
- │ ├── header/ \# Shared header/nav component  
- │ └── loader/ \# Shared loading indicator component  
- ├── models/  
- │ └── product.model.ts \# TypeScript interface for the Product object  
- ├── services/  
- │ └── product.service.ts \# Handles all API calls and state management  
- ├── app.component.ts \# Root application component  
- ├── app.config.ts \# Standalone application configuration  
- └── app.routes.ts \# Defines application routes (with lazy loading)
+```text
+src/
+└── app/
+ ├── components/
+ │ ├── products/
+ │ │ ├── product-card/              # Reusable card component
+ │ │ ├── product-detail/            # Detail page component
+ │ │ └── product-list/              # List of products component
+ │ └── shared/
+ │ ├── header/                      # Shared header/nav component
+ │ └── loader/                      # Shared loading indicator component
+ ├── models/
+ │ └── product.model.ts             # TypeScript interface for the Product object
+ ├── services/
+ │ └── product.service.ts           # Handles all API calls and state management
+ ├── app.component.ts               # Root application component
+ ├── app.config.ts                  # Standalone application configuration
+ └── app.routes.ts                  # Defines application routes (with lazy loading)
+
+```
 
 ## **Architecture & Design**
 
