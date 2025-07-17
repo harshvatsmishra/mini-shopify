@@ -93,3 +93,16 @@ This application is built using a modern, reactive architecture.
 - **ProductService:** Acts as the single source of truth. It handles all HTTP requests and manages the application's state (filters, search terms, sorting) using RxJS BehaviorSubjects.
 - **combineLatest:** The service uses the combineLatest operator to merge multiple data streams into a final displayProducts$ observable. This ensures the UI reactively updates whenever any filter or sort criteria changes.
 - **Standalone Components:** The entire application is built with standalone components, simplifying the architecture and improving tree-shaking.
+
+## Screenshots
+
+Here's a look at the application in action.
+
+**Product List Page**
+![Product List page showing a grid of items](./.github/assets/Product-list.png)
+![Product List page responsiveness](./.github/assets/Responsive%20Product-list.png)
+![Product Gallery sorting](./.github/assets/Filter.png)
+
+**Product Detail Page**
+![Product Detail page showing item description and options](./.github/assets/Product-desc.png)
+![Product Detail page responsiveness](./.github/assets/responsive-product-desc.png)
